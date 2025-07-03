@@ -51,18 +51,22 @@ export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
       ['Last Update', aircraft.lastUpdate, 'CURRENT']
     ];
 
+    let finalY = 80;
     autoTable(doc, {
       startY: 80,
       head: [statusData[0]],
       body: statusData.slice(1),
       theme: 'grid',
       headStyles: { fillColor: [51, 65, 85] },
-      styles: { fontSize: 10 }
+      styles: { fontSize: 10 },
+      didDrawPage: function (data) {
+        finalY = data.cursor?.y || 80;
+      }
     });
 
     // Component Health Analysis
     doc.setFontSize(16);
-    doc.text('Component Health Analysis', 20, doc.lastAutoTable.finalY + 20);
+    doc.text('Component Health Analysis', 20, finalY + 20);
     
     const componentData = [
       ['Component', 'Health %', 'Status', 'Next Maintenance'],
@@ -73,7 +77,7 @@ export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
     ];
 
     autoTable(doc, {
-      startY: doc.lastAutoTable.finalY + 30,
+      startY: finalY + 30,
       head: [componentData[0]],
       body: componentData.slice(1),
       theme: 'grid',
