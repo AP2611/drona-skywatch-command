@@ -1,0 +1,54 @@
+
+{
+  "app": {
+    "title": "DRONA",
+    "subtitle": "Opérations de Défense Prêtes pour Aéronefs en Réseau",
+    "motto": "Protéger les cieux, un signal à la fois."
+  },
+  "nav": {
+    "dashboard": "Tableau de Bord Santé",
+    "upload": "Téléchargement de Données",
+    "insights": "Insights IA",
+    "map": "Carte Réseau",
+    "logs": "Journaux de Mission",
+    "simulation": "Simulation en Direct",
+    "users": "Gestion des Utilisateurs",
+    "settings": "Paramètres"
+  },
+  "dashboard": {
+    "title": "Surveillance Santé des Aéronefs",
+    "totalAircraft": "Total Aéronefs",
+    "operational": "Opérationnel",
+    "caution": "Attention",
+    "critical": "Critique",
+    "systemHealth": "Métriques Santé Système",
+    "liveTelemetry": "Flux Télémétrie en Direct",
+    "threatDetection": "Détection de Menaces",
+    "missionReadiness": "Préparation Mission"
+  },
+  "aircraft": {
+    "overallHealth": "Santé Globale",
+    "altitude": "Altitude",
+    "speed": "Vitesse",
+    "battery": "Batterie",
+    "temperature": "Température",
+    "lastUpdate": "Dernière mise à jour"
+  },
+  "diagnostics": {
+    "componentHealth": "Santé des Composants",
+    "timeToFailure": "Temps avant Panne",
+    "maintenanceUrgency": "Urgence Maintenance",
+    "rootCause": "Analyse Cause Racine"
+  },
+  "threats": {
+    "noThreats": "Aucune Menace Active",
+    "jamming": "Brouillage Signal Détecté",
+    "missileLock": "Alerte Verrouillage Missile",
+    "ewAttack": "Attaque Guerre Électronique"
+  },
+  "status": {
+    "networkActive": "Réseau Actif",
+    "commandCenter": "Centre de Commandement",
+    "operationalStatus": "Statut Opérationnel"
+  }
+}

@@ -1,0 +1,54 @@
+
+{
+  "app": {
+    "title": "DRONA",
+    "subtitle": "Defence Ready Operations for Networked Aircrafts",
+    "motto": "Protecting the skies, one signal at a time."
+  },
+  "nav": {
+    "dashboard": "Health Dashboard",
+    "upload": "Data Upload",
+    "insights": "AI Insights",
+    "map": "Network Map",
+    "logs": "Mission Logs",
+    "simulation": "Live Simulation",
+    "users": "User Management",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Aircraft Health Monitoring",
+    "totalAircraft": "Total Aircraft",
+    "operational": "Operational",
+    "caution": "Caution",
+    "critical": "Critical",
+    "systemHealth": "System Health Metrics",
+    "liveTelemetry": "Live Telemetry Feed",
+    "threatDetection": "Threat Detection",
+    "missionReadiness": "Mission Readiness"
+  },
+  "aircraft": {
+    "overallHealth": "Overall Health",
+    "altitude": "Altitude",
+    "speed": "Speed",
+    "battery": "Battery",
+    "temperature": "Temp",
+    "lastUpdate": "Last update"
+  },
+  "diagnostics": {
+    "componentHealth": "Component Health",
+    "timeToFailure": "Time to Failure",
+    "maintenanceUrgency": "Maintenance Urgency",
+    "rootCause": "Root Cause Analysis"
+  },
+  "threats": {
+    "noThreats": "No Active Threats",
+    "jamming": "Signal Jamming Detected",
+    "missileLock": "Missile Lock Warning",
+    "ewAttack": "Electronic Warfare Attack"
+  },
+  "status": {
+    "networkActive": "Network Active",
+    "commandCenter": "Command Center",
+    "operationalStatus": "Operational Status"
+  }
+}

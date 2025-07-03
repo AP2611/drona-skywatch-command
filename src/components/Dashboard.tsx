@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from 'react-i18next';
 import { 
   Plane, 
   AlertTriangle, 
@@ -15,6 +16,10 @@ import {
 import { AircraftStatusCard } from "@/components/AircraftStatusCard";
 import { HealthMetrics } from "@/components/HealthMetrics";
 import { TelemetryChart } from "@/components/TelemetryChart";
+import { ComponentHeatmap } from "@/components/ComponentHeatmap";
+import { ThreatDetection } from "@/components/ThreatDetection";
+import { MissionReadiness } from "@/components/MissionReadiness";
+import { Aircraft3D } from "@/components/Aircraft3D";
 
 // Simulated aircraft data
 const aircraftData = [
@@ -54,6 +59,7 @@ const aircraftData = [
 ];
 
 export function Dashboard() {
+  const { t } = useTranslation();
   const operationalCount = aircraftData.filter(a => a.status === 'operational').length;
   const cautionCount = aircraftData.filter(a => a.status === 'caution').length;
   const criticalCount = aircraftData.filter(a => a.status === 'critical').length;
@@ -68,8 +74,8 @@ export function Dashboard() {
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
           </div>
         </div>
-        <h2 className="text-3xl font-bold text-white mb-2">Aircraft Health Monitoring</h2>
-        <p className="text-slate-400 text-lg">"Protecting the skies, one signal at a time."</p>
+        <h2 className="text-3xl font-bold text-white mb-2">{t('dashboard.title')}</h2>
+        <p className="text-slate-400 text-lg">"{t('app.motto')}"</p>
       </div>
 
       {/* Fleet Overview */}
@@ -78,7 +84,7 @@ export function Dashboard() {
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <Plane className="h-5 w-5 text-blue-400" />
-              Total Aircraft
+              {t('dashboard.totalAircraft')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -90,7 +96,7 @@ export function Dashboard() {
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-green-400" />
-              Operational
+              {t('dashboard.operational')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -102,7 +108,7 @@ export function Dashboard() {
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <AlertTriangle className="h-5 w-5 text-yellow-400" />
-              Caution
+              {t('dashboard.caution')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -114,7 +120,7 @@ export function Dashboard() {
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <XCircle className="h-5 w-5 text-red-400" />
-              Critical
+              {t('dashboard.critical')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -128,6 +134,18 @@ export function Dashboard() {
         {aircraftData.map((aircraft) => (
           <AircraftStatusCard key={aircraft.id} aircraft={aircraft} />
         ))}
+      </div>
+
+      {/* Advanced Diagnostics and 3D Visualization */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <ComponentHeatmap />
+        <Aircraft3D />
+      </div>
+
+      {/* Threat Detection and Mission Readiness */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <ThreatDetection />
+        <MissionReadiness />
       </div>
 
       {/* Health Metrics and Charts */}

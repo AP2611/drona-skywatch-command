@@ -1,0 +1,54 @@
+
+{
+  "app": {
+    "title": "ДРОНА",
+    "subtitle": "Готовые к Обороне Операции для Сетевых Самолетов",
+    "motto": "Защищая небеса, по одному сигналу."
+  },
+  "nav": {
+    "dashboard": "Панель Здоровья",
+    "upload": "Загрузка Данных",
+    "insights": "ИИ Аналитика",
+    "map": "Сетевая Карта",
+    "logs": "Журналы Миссий",
+    "simulation": "Живая Симуляция",
+    "users": "Управление Пользователями",
+    "settings": "Настройки"
+  },
+  "dashboard": {
+    "title": "Мониторинг Здоровья Самолетов",
+    "totalAircraft": "Всего Самолетов",
+    "operational": "Работающие",
+    "caution": "Внимание",
+    "critical": "Критическое",
+    "systemHealth": "Метрики Здоровья Системы",
+    "liveTelemetry": "Поток Телеметрии",
+    "threatDetection": "Обнаружение Угроз",
+    "missionReadiness": "Готовность к Миссии"
+  },
+  "aircraft": {
+    "overallHealth": "Общее Здоровье",
+    "altitude": "Высота",
+    "speed": "Скорость",
+    "battery": "Батарея",
+    "temperature": "Температура",
+    "lastUpdate": "Последнее обновление"
+  },
+  "diagnostics": {
+    "componentHealth": "Здоровье Компонентов",
+    "timeToFailure": "Время до Отказа",
+    "maintenanceUrgency": "Срочность Обслуживания",
+    "rootCause": "Анализ Первопричин"
+  },
+  "threats": {
+    "noThreats": "Нет Активных Угроз",
+    "jamming": "Обнаружено Глушение Сигнала",
+    "missileLock": "Предупреждение о Захвате Ракеты",
+    "ewAttack": "Атака Электронной Войны"
+  },
+  "status": {
+    "networkActive": "Сеть Активна",
+    "commandCenter": "Командный Центр",
+    "operationalStatus": "Операционный Статус"
+  }
+}

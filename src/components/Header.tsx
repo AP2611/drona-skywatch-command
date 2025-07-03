@@ -2,8 +2,12 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Wifi } from "lucide-react";
+import { useTranslation } from 'react-i18next';
+import { LanguageSelector } from './LanguageSelector';
 
 export function Header() {
+  const { t } = useTranslation();
+
   return (
     <header className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between px-6">
@@ -14,20 +18,21 @@ export function Header() {
               <Shield className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">DRONA</h1>
-              <p className="text-xs text-slate-400">Defence Ready Operations for Networked Aircrafts</p>
+              <h1 className="text-xl font-bold text-white">{t('app.title')}</h1>
+              <p className="text-xs text-slate-400">{t('app.subtitle')}</p>
             </div>
           </div>
         </div>
         
         <div className="flex items-center gap-4">
+          <LanguageSelector />
           <Badge variant="outline" className="border-green-500 text-green-400">
             <Wifi className="h-3 w-3 mr-1" />
-            Network Active
+            {t('status.networkActive')}
           </Badge>
           <div className="text-right">
-            <p className="text-sm text-white">Command Center</p>
-            <p className="text-xs text-slate-400">Operational Status</p>
+            <p className="text-sm text-white">{t('status.commandCenter')}</p>
+            <p className="text-xs text-slate-400">{t('status.operationalStatus')}</p>
           </div>
         </div>
       </div>

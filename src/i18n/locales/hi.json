@@ -1,0 +1,54 @@
+
+{
+  "app": {
+    "title": "द्रोण",
+    "subtitle": "नेटवर्क्ड एयरक्राफ्ट के लिए रक्षा तैयार संचालन",
+    "motto": "आकाश की रक्षा, एक सिग्नल के समय।"
+  },
+  "nav": {
+    "dashboard": "स्वास्थ्य डैशबोर्ड",
+    "upload": "डेटा अपलोड",
+    "insights": "AI इनसाइट्स",
+    "map": "नेटवर्क मैप",
+    "logs": "मिशन लॉग्स",
+    "simulation": "लाइव सिमुलेशन",
+    "users": "उपयोगकर्ता प्रबंधन",
+    "settings": "सेटिंग्स"
+  },
+  "dashboard": {
+    "title": "विमान स्वास्थ्य निगरानी",
+    "totalAircraft": "कुल विमान",
+    "operational": "परिचालित",
+    "caution": "सावधानी",
+    "critical": "गंभीर",
+    "systemHealth": "सिस्टम स्वास्थ्य मेट्रिक्स",
+    "liveTelemetry": "लाइव टेलीमेट्री फीड",
+    "threatDetection": "खतरा पहचान",
+    "missionReadiness": "मिशन तैयारी"
+  },
+  "aircraft": {
+    "overallHealth": "समग्र स्वास्थ्य",
+    "altitude": "ऊंचाई",
+    "speed": "गति",
+    "battery": "बैटरी",
+    "temperature": "तापमान",
+    "lastUpdate": "अंतिम अपडेट"
+  },
+  "diagnostics": {
+    "componentHealth": "घटक स्वास्थ्य",
+    "timeToFailure": "विफलता का समय",
+    "maintenanceUrgency": "रखरखाव की तात्कालिकता",
+    "rootCause": "मूल कारण विश्लेषण"
+  },
+  "threats": {
+    "noThreats": "कोई सक्रिय खतरा नहीं",
+    "jamming": "सिग्नल जैमिंग का पता चला",
+    "missileLock": "मिसाइल लॉक चेतावनी",
+    "ewAttack": "इलेक्ट्रॉनिक वारफेयर अटैक"
+  },
+  "status": {
+    "networkActive": "नेटवर्क सक्रिय",
+    "commandCenter": "कमांड सेंटर",
+    "operationalStatus": "परिचालन स्थिति"
+  }
+}

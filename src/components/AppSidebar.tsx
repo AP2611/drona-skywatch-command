@@ -9,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useTranslation } from 'react-i18next';
 import { 
   Gauge, 
   Upload, 
@@ -20,59 +21,61 @@ import {
   Settings
 } from "lucide-react";
 
-const menuItems = [
-  {
-    title: "Health Dashboard",
-    url: "#dashboard",
-    icon: Gauge,
-    description: "Real-time aircraft diagnostics"
-  },
-  {
-    title: "Data Upload",
-    url: "#upload",
-    icon: Upload,
-    description: "Upload CSV/JSON data"
-  },
-  {
-    title: "AI Insights",
-    url: "#insights", 
-    icon: Brain,
-    description: "ML predictions & anomaly detection"
-  },
-  {
-    title: "Network Map",
-    url: "#map",
-    icon: Map,
-    description: "Aircraft positions & status"
-  },
-  {
-    title: "Mission Logs",
-    url: "#logs",
-    icon: FileText,
-    description: "Diagnostic reports"
-  },
-  {
-    title: "Live Simulation",
-    url: "#simulation",
-    icon: Play,
-    description: "Replay flight telemetry"
-  }
-];
-
-const systemItems = [
-  {
-    title: "User Management",
-    url: "#users",
-    icon: Users
-  },
-  {
-    title: "Settings",
-    url: "#settings", 
-    icon: Settings
-  }
-];
-
 export function AppSidebar() {
+  const { t } = useTranslation();
+
+  const menuItems = [
+    {
+      title: t('nav.dashboard'),
+      url: "#dashboard",
+      icon: Gauge,
+      description: "Real-time aircraft diagnostics"
+    },
+    {
+      title: t('nav.upload'),
+      url: "#upload",
+      icon: Upload,
+      description: "Upload CSV/JSON data"
+    },
+    {
+      title: t('nav.insights'),
+      url: "#insights", 
+      icon: Brain,
+      description: "ML predictions & anomaly detection"
+    },
+    {
+      title: t('nav.map'),
+      url: "#map",
+      icon: Map,
+      description: "Aircraft positions & status"
+    },
+    {
+      title: t('nav.logs'),
+      url: "#logs",
+      icon: FileText,
+      description: "Diagnostic reports"
+    },
+    {
+      title: t('nav.simulation'),
+      url: "#simulation",
+      icon: Play,
+      description: "Replay flight telemetry"
+    }
+  ];
+
+  const systemItems = [
+    {
+      title: t('nav.users'),
+      url: "#users",
+      icon: Users
+    },
+    {
+      title: t('nav.settings'),
+      url: "#settings", 
+      icon: Settings
+    }
+  ];
+
   return (
     <Sidebar className="border-r border-slate-700 bg-slate-800/30 backdrop-blur-sm">
       <SidebarContent className="bg-transparent">
