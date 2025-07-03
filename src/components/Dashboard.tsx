@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -20,6 +19,9 @@ import { ComponentHeatmap } from "@/components/ComponentHeatmap";
 import { ThreatDetection } from "@/components/ThreatDetection";
 import { MissionReadiness } from "@/components/MissionReadiness";
 import { Aircraft3D } from "@/components/Aircraft3D";
+import { ReportGenerator } from "@/components/ReportGenerator";
+import { NetworkMap } from "@/components/NetworkMap";
+import { RealTimeTelemetry } from "@/components/RealTimeTelemetry";
 
 // Simulated aircraft data
 const aircraftData = [
@@ -129,10 +131,19 @@ export function Dashboard() {
         </Card>
       </div>
 
-      {/* Aircraft Status Cards */}
+      {/* Real-Time Telemetry and Network Map */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <RealTimeTelemetry />
+        <NetworkMap />
+      </div>
+
+      {/* Aircraft Status Cards with Report Generation */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {aircraftData.map((aircraft) => (
-          <AircraftStatusCard key={aircraft.id} aircraft={aircraft} />
+          <div key={aircraft.id} className="space-y-4">
+            <AircraftStatusCard aircraft={aircraft} />
+            <ReportGenerator aircraft={aircraft} />
+          </div>
         ))}
       </div>
 
