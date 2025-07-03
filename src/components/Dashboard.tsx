@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -18,7 +19,6 @@ import { TelemetryChart } from "@/components/TelemetryChart";
 import { ComponentHeatmap } from "@/components/ComponentHeatmap";
 import { ThreatDetection } from "@/components/ThreatDetection";
 import { MissionReadiness } from "@/components/MissionReadiness";
-import { Aircraft3D } from "@/components/Aircraft3D";
 import { ReportGenerator } from "@/components/ReportGenerator";
 import { NetworkMap } from "@/components/NetworkMap";
 import { RealTimeTelemetry } from "@/components/RealTimeTelemetry";
@@ -147,10 +147,9 @@ export function Dashboard() {
         ))}
       </div>
 
-      {/* Advanced Diagnostics and 3D Visualization */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+      {/* Advanced Diagnostics */}
+      <div className="grid grid-cols-1 xl:grid-cols-1 gap-6">
         <ComponentHeatmap />
-        <Aircraft3D />
       </div>
 
       {/* Threat Detection and Mission Readiness */}

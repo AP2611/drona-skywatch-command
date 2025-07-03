@@ -10,6 +10,9 @@ export function RealTimeTelemetry() {
   const { t } = useTranslation();
   const { telemetryData, isConnected } = useWebSocket();
 
+  console.log('RealTimeTelemetry: telemetryData length:', telemetryData.length);
+  console.log('RealTimeTelemetry: isConnected:', isConnected);
+
   // Format data for chart
   const chartData = telemetryData.slice(-10).map((data, index) => ({
     time: index,
