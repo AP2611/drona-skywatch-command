@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -22,6 +21,7 @@ import { MissionReadiness } from "@/components/MissionReadiness";
 import { ReportGenerator } from "@/components/ReportGenerator";
 import { NetworkMap } from "@/components/NetworkMap";
 import { RealTimeTelemetry } from "@/components/RealTimeTelemetry";
+import { EngineHealthMonitor } from "@/components/EngineHealthMonitor";
 
 // Simulated aircraft data
 const aircraftData = [
