@@ -137,6 +137,11 @@ export function Dashboard() {
         <NetworkMap />
       </div>
 
+      {/* Engine Health Monitor */}
+      <div className="grid grid-cols-1 gap-6">
+        <EngineHealthMonitor />
+      </div>
+
       {/* Aircraft Status Cards with Report Generation */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {aircraftData.map((aircraft) => (
