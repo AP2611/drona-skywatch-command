@@ -14,8 +14,12 @@ export function Header() {
         <div className="flex items-center gap-4">
           <SidebarTrigger className="text-slate-300 hover:text-white" />
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg">
-              <Shield className="h-6 w-6 text-white" />
+            <div className="flex items-center justify-center w-10 h-10 bg-transparent rounded-lg">
+              <img 
+                src="/lovable-uploads/5b99b38c-b9d3-4d08-9b92-17c75afa5d3e.png" 
+                alt="DRONA Logo" 
+                className="w-8 h-8 object-contain"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-white">{t('app.title')}</h1>
