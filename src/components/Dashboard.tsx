@@ -1,6 +1,8 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
 import { 
   Plane, 
@@ -10,7 +12,10 @@ import {
   Activity,
   Gauge,
   Battery,
-  Thermometer
+  Thermometer,
+  Shield,
+  Clock,
+  DollarSign
 } from "lucide-react";
 import { AircraftStatusCard } from "@/components/AircraftStatusCard";
 import { HealthMetrics } from "@/components/HealthMetrics";
@@ -68,22 +73,96 @@ export function Dashboard() {
   const criticalCount = aircraftData.filter(a => a.status === 'critical').length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Hero Section */}
-      <div className="text-center py-8 border-b border-slate-700">
-        <div className="flex items-center justify-center gap-4 mb-4">
-          <div className="relative">
-            <Plane className="h-12 w-12 text-blue-400 animate-pulse" />
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
-          </div>
+      <div className="relative text-center py-16 px-6 rounded-2xl overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/lovable-uploads/57aaa7c4-dced-4ca6-97f2-250bcd6acc7b.png')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         </div>
-        <h2 className="text-3xl font-bold text-white mb-2">{t('dashboard.title')}</h2>
-        <p className="text-slate-400 text-lg">"{t('app.motto')}"</p>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="relative">
+              <Plane className="h-16 w-16 text-blue-400 animate-pulse" />
+              <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full animate-ping"></div>
+            </div>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 gradient-text">
+            Predictive Maintenance for Aircraft
+          </h1>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Drona uses advanced AI algorithms to predict potential faults in aircraft, ensuring safety and reducing downtime.
+          </p>
+          <Button className="btn-modern text-lg px-8 py-4">
+            Explore Dashboard
+          </Button>
+        </div>
+      </div>
+
+      {/* Key Features Section */}
+      <div className="space-y-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Key Features</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Drona offers a comprehensive suite of features designed to enhance aircraft maintenance and operational efficiency.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="modern-card border-gray-700">
+            <CardHeader className="pb-4">
+              <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="h-6 w-6 text-blue-400" />
+              </div>
+              <CardTitle className="text-white text-xl">Enhanced Safety</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-400">
+                Predictive maintenance minimizes the risk of in-flight failures, ensuring the highest safety standards.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="modern-card border-gray-700">
+            <CardHeader className="pb-4">
+              <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4">
+                <Clock className="h-6 w-6 text-green-400" />
+              </div>
+              <CardTitle className="text-white text-xl">Reduced Downtime</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-400">
+                AI-driven insights allow for proactive maintenance, significantly reducing aircraft downtime.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="modern-card border-gray-700">
+            <CardHeader className="pb-4">
+              <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center mb-4">
+                <DollarSign className="h-6 w-6 text-yellow-400" />
+              </div>
+              <CardTitle className="text-white text-xl">Cost Savings</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-400">
+                By preventing unexpected repairs and optimizing maintenance schedules, Drona helps lower operational costs.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       {/* Fleet Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="bg-slate-800/50 border-slate-700">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <Card className="modern-card border-gray-700">
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <Plane className="h-5 w-5 text-blue-400" />
@@ -95,7 +174,7 @@ export function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="bg-slate-800/50 border-slate-700">
+        <Card className="modern-card border-gray-700">
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-green-400" />
@@ -107,7 +186,7 @@ export function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="bg-slate-800/50 border-slate-700">
+        <Card className="modern-card border-gray-700">
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <AlertTriangle className="h-5 w-5 text-yellow-400" />
@@ -119,7 +198,7 @@ export function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="bg-slate-800/50 border-slate-700">
+        <Card className="modern-card border-gray-700">
           <CardHeader className="pb-3">
             <CardTitle className="text-white flex items-center gap-2">
               <XCircle className="h-5 w-5 text-red-400" />
