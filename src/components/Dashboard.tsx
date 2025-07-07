@@ -22,6 +22,7 @@ import { ReportGenerator } from "@/components/ReportGenerator";
 import { NetworkMap } from "@/components/NetworkMap";
 import { RealTimeTelemetry } from "@/components/RealTimeTelemetry";
 import { EngineHealthMonitor } from "@/components/EngineHealthMonitor";
+import { Chatbot } from "@/components/Chatbot";
 
 // Simulated aircraft data
 const aircraftData = [
@@ -168,6 +169,9 @@ export function Dashboard() {
         <HealthMetrics />
         <TelemetryChart />
       </div>
+
+      {/* Chatbot Component */}
+      <Chatbot />
     </div>
   );
 }
