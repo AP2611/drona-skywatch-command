@@ -47,6 +47,22 @@ const Pricing = () => {
         "Threat detection system"
       ],
       popular: true
+    },
+    {
+      name: "Enterprise",
+      price: "$19,999",
+      period: "/month",
+      description: "Complete solution for large-scale operations",
+      features: [
+        "Unlimited aircraft monitoring",
+        "Full AI suite with custom models",
+        "Multi-site deployment",
+        "Dedicated account manager",
+        "Custom integrations",
+        "On-premise deployment option",
+        "Advanced security features"
+      ],
+      popular: false
     }
   ];
 
@@ -65,7 +81,7 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {plans.map((plan, index) => (
             <Card key={index} className={`modern-card border-gray-700 relative ${plan.popular ? 'border-blue-500 scale-105' : ''}`}>
               {plan.popular && (
@@ -129,10 +145,35 @@ const Pricing = () => {
               <div className="absolute top-4 right-4 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
               <div className="absolute bottom-4 left-4 w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
               <div className="absolute bottom-4 right-4 w-4 h-4 bg-purple-400 rounded-full animate-pulse"></div>
+              
+              {/* Circuit Lines */}
+              <div className="absolute top-8 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+              <div className="absolute top-8 bottom-8 left-8 w-0.5 bg-gradient-to-b from-transparent via-green-400 to-transparent"></div>
+              <div className="absolute top-8 bottom-8 right-8 w-0.5 bg-gradient-to-b from-transparent via-orange-400 to-transparent"></div>
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-2">DRONA Neural Core</h3>
-            <p className="text-gray-300">7nm Architecture • 128 AI Cores • 1000+ TOPS</p>
+            <p className="text-gray-300 mb-4">7nm Architecture • 128 AI Cores • 1000+ TOPS</p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400">7nm</div>
+                <div className="text-sm text-gray-400">Process Node</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-400">128</div>
+                <div className="text-sm text-gray-400">AI Cores</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400">1000+</div>
+                <div className="text-sm text-gray-400">TOPS</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-orange-400">5W</div>
+                <div className="text-sm text-gray-400">Power</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

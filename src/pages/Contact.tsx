@@ -77,6 +77,16 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Company
+                  </label>
+                  <Input 
+                    placeholder="Your Company Name"
+                    className="bg-gray-800 border-gray-600 text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Message
                   </label>
                   <Textarea 
@@ -121,6 +131,36 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-white">Phone</h3>
                     <p className="text-gray-300">+1 (555) 123-4567</p>
                     <p className="text-gray-300">+1 (555) 987-6543</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="modern-card border-gray-700">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Address</h3>
+                    <p className="text-gray-300">123 Aviation Street</p>
+                    <p className="text-gray-300">Tech District, CA 94105</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="modern-card border-gray-700">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-orange-600/20 rounded-lg flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-orange-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Business Hours</h3>
+                    <p className="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-300">24/7 Emergency Support Available</p>
                   </div>
                 </div>
               </CardContent>

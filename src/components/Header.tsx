@@ -7,7 +7,11 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { LanguageSelector } from './LanguageSelector';
 
-export function Header() {
+interface HeaderProps {
+  showSidebarTrigger?: boolean;
+}
+
+export function Header({ showSidebarTrigger = false }: HeaderProps) {
   const { t } = useTranslation();
   const location = useLocation();
 
@@ -21,7 +25,9 @@ export function Header() {
     <header className="border-b border-gray-700/50 bg-gray-900/80 backdrop-blur-lg">
       <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-6">
-          <SidebarTrigger className="text-gray-300 hover:text-white md:hidden" />
+          {showSidebarTrigger && (
+            <SidebarTrigger className="text-gray-300 hover:text-white md:hidden" />
+          )}
           <Link to="/" className="flex items-center gap-3">
             <div className="flex items-center justify-center w-10 h-10 bg-transparent rounded-lg">
               <img 

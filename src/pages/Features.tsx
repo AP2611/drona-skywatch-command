@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
@@ -86,26 +87,29 @@ const Features = () => {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {/* Sample feature card to test rendering */}
-          <Card className="modern-card border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
-            <CardHeader className="pb-4">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
-                <Brain className="h-8 w-8 text-blue-400" />
-              </div>
-              <CardTitle className="text-white text-xl">AI-Powered Predictive Analytics</CardTitle>
-              <CardDescription className="text-gray-400">
-                Advanced machine learning algorithms analyze aircraft data to predict maintenance needs before failures occur.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span className="text-sm text-gray-300">Reduces unplanned downtime by 60%</span>
+          {features.map((feature, index) => (
+            <Card key={index} className="modern-card border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:scale-105">
+              <CardHeader className="pb-4">
+                <div className="w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="h-8 w-8 text-blue-400" />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                <CardTitle className="text-white text-xl">{feature.title}</CardTitle>
+                <CardDescription className="text-gray-400">
+                  {feature.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  {feature.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <span className="text-sm text-gray-300">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Technology Stack */}
@@ -115,6 +119,18 @@ const Features = () => {
             <div className="modern-card border-gray-700 p-6 text-center">
               <Brain className="h-10 w-10 text-blue-400 mx-auto mb-3" />
               <h3 className="text-white font-semibold">Machine Learning</h3>
+            </div>
+            <div className="modern-card border-gray-700 p-6 text-center">
+              <Shield className="h-10 w-10 text-green-400 mx-auto mb-3" />
+              <h3 className="text-white font-semibold">Security</h3>
+            </div>
+            <div className="modern-card border-gray-700 p-6 text-center">
+              <Cloud className="h-10 w-10 text-purple-400 mx-auto mb-3" />
+              <h3 className="text-white font-semibold">Cloud Computing</h3>
+            </div>
+            <div className="modern-card border-gray-700 p-6 text-center">
+              <Cpu className="h-10 w-10 text-orange-400 mx-auto mb-3" />
+              <h3 className="text-white font-semibold">AI Hardware</h3>
             </div>
           </div>
         </div>
