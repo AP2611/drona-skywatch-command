@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/Header";
+import { useTranslation } from 'react-i18next';
 import { 
   Mail, 
   Phone, 
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const { t } = useTranslation();
   console.log("Contact page rendering");
   
   return (
@@ -25,10 +27,10 @@ const Contact = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-white mb-6 gradient-text">
-            Get in Touch
+            {t('contact.title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to revolutionize your aircraft maintenance? Contact our team of experts to learn how DRONA can enhance your operations.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -37,28 +39,28 @@ const Contact = () => {
           <div>
             <Card className="modern-card border-gray-700">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">Send us a Message</CardTitle>
+                <CardTitle className="text-2xl text-white">{t('contact.form.title')}</CardTitle>
                 <CardDescription className="text-gray-400">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  {t('contact.form.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      First Name
+                      {t('contact.form.firstName')}
                     </label>
                     <Input 
-                      placeholder="John"
+                      placeholder={t('contact.form.firstNamePlaceholder')}
                       className="bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Last Name
+                      {t('contact.form.lastName')}
                     </label>
                     <Input 
-                      placeholder="Doe"
+                      placeholder={t('contact.form.lastNamePlaceholder')}
                       className="bg-gray-800 border-gray-600 text-white"
                     />
                   </div>
@@ -66,31 +68,31 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
+                    {t('contact.form.email')}
                   </label>
                   <Input 
                     type="email"
-                    placeholder="john@company.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     className="bg-gray-800 border-gray-600 text-white"
                   />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Company
+                    {t('contact.form.company')}
                   </label>
                   <Input 
-                    placeholder="Your Company Name"
+                    placeholder={t('contact.form.companyPlaceholder')}
                     className="bg-gray-800 border-gray-600 text-white"
                   />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    {t('contact.form.message')}
                   </label>
                   <Textarea 
-                    placeholder="Tell us about your aircraft maintenance needs..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     rows={5}
                     className="bg-gray-800 border-gray-600 text-white"
                   />
@@ -98,7 +100,7 @@ const Contact = () => {
                 
                 <Button className="w-full btn-modern">
                   <Send className="h-4 w-4 mr-2" />
-                  Send Message
+                  {t('contact.form.sendMessage')}
                 </Button>
               </CardContent>
             </Card>
@@ -113,7 +115,7 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Email</h3>
+                    <h3 className="text-lg font-semibold text-white">{t('contact.info.email')}</h3>
                     <p className="text-gray-300">contact@drona.ai</p>
                     <p className="text-gray-300">support@drona.ai</p>
                   </div>
@@ -128,7 +130,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-green-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Phone</h3>
+                    <h3 className="text-lg font-semibold text-white">{t('contact.info.phone')}</h3>
                     <p className="text-gray-300">+1 (555) 123-4567</p>
                     <p className="text-gray-300">+1 (555) 987-6543</p>
                   </div>
@@ -143,9 +145,9 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Address</h3>
-                    <p className="text-gray-300">123 Aviation Street</p>
-                    <p className="text-gray-300">Tech District, CA 94105</p>
+                    <h3 className="text-lg font-semibold text-white">{t('contact.info.address')}</h3>
+                    <p className="text-gray-300">{t('contact.info.street')}</p>
+                    <p className="text-gray-300">{t('contact.info.city')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -158,9 +160,9 @@ const Contact = () => {
                     <Clock className="h-6 w-6 text-orange-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">Business Hours</h3>
-                    <p className="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-300">24/7 Emergency Support Available</p>
+                    <h3 className="text-lg font-semibold text-white">{t('contact.info.hours')}</h3>
+                    <p className="text-gray-300">{t('contact.info.businessHours')}</p>
+                    <p className="text-gray-300">{t('contact.info.emergencySupport')}</p>
                   </div>
                 </div>
               </CardContent>

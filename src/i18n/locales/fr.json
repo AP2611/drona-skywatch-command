@@ -24,7 +24,122 @@
     "systemHealth": "Métriques Santé Système",
     "liveTelemetry": "Flux Télémétrie en Direct",
     "threatDetection": "Détection de Menaces",
-    "missionReadiness": "Préparation Mission"
+    "missionReadiness": "Préparation Mission",
+    "heroTitle": "Maintenance Prédictive pour Aéronefs",
+    "heroSubtitle": "Drona utilise des algorithmes IA avancés pour prédire les défaillances potentielles des aéronefs, garantissant la sécurité et réduisant les temps d'arrêt.",
+    "exploreDashboard": "Explorer le Tableau de Bord",
+    "keyFeatures": "Caractéristiques Clés",
+    "keyFeaturesDescription": "Drona offre une suite complète de fonctionnalités conçues pour améliorer la maintenance et l'efficacité opérationnelle des aéronefs.",
+    "features": {
+      "enhancedSafety": {
+        "title": "Sécurité Renforcée",
+        "description": "La maintenance prédictive minimise le risque de défaillances en vol, garantissant les plus hauts standards de sécurité."
+      },
+      "reducedDowntime": {
+        "title": "Temps d'Arrêt Réduit",
+        "description": "Les insights pilotés par l'IA permettent une maintenance proactive, réduisant considérablement les temps d'arrêt des aéronefs."
+      },
+      "costSavings": {
+        "title": "Économies de Coûts",
+        "description": "En prévenant les réparations inattendues et en optimisant les horaires de maintenance, Drona aide à réduire les coûts opérationnels."
+      }
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités Avancées pour la Maintenance d'Aéronefs",
+    "subtitle": "Découvrez la suite complète de fonctionnalités alimentées par l'IA qui font de DRONA la solution leader pour la maintenance prédictive d'aéronefs.",
+    "technologyStack": "Construit sur une Technologie de Pointe",
+    "tech": {
+      "machineLearning": "Apprentissage Automatique",
+      "security": "Sécurité",
+      "cloudComputing": "Cloud Computing",
+      "aiHardware": "Matériel IA"
+    },
+    "aiPredictive": {
+      "title": "Analyse Prédictive Alimentée par l'IA",
+      "description": "Les algorithmes d'apprentissage automatique avancés analysent les données d'aéronefs pour prédire les besoins de maintenance avant les défaillances.",
+      "benefit1": "Réduit les temps d'arrêt non planifiés de 60%",
+      "benefit2": "Améliore les marges de sécurité",
+      "benefit3": "Optimise les horaires de maintenance"
+    },
+    "threatDetection": {
+      "title": "Détection de Menaces en Temps Réel",
+      "description": "Surveillance continue des systèmes d'aéronefs pour identifier les menaces de sécurité potentielles et les anomalies.",
+      "benefit1": "Surveillance système 24/7",
+      "benefit2": "Notifications d'alerte instantanées",
+      "benefit3": "Réponse automatisée aux menaces"
+    },
+    "healthMonitoring": {
+      "title": "Tableau de Bord de Surveillance Santé",
+      "description": "Visualisation complète en temps réel des métriques de santé des aéronefs et des performances système.",
+      "benefit1": "Données de télémétrie en direct",
+      "benefit2": "Visualisations interactives",
+      "benefit3": "Alertes personnalisables"
+    },
+    "networkMapping": {
+      "title": "Cartographie et Suivi Réseau",
+      "description": "Visualisation réseau avancée de style radar pour suivre les positions et statuts des aéronefs.",
+      "benefit1": "Suivi de position en temps réel",
+      "benefit2": "Cartographie de topologie réseau",
+      "benefit3": "Surveillance des liens de communication"
+    },
+    "dataIntegration": {
+      "title": "Hub d'Intégration de Données",
+      "description": "Intégration transparente avec les systèmes d'aéronefs existants et les bases de données pour une analyse de données complète.",
+      "benefit1": "Support multi-format de données",
+      "benefit2": "Compatibilité système hérité",
+      "benefit3": "Synchronisation automatisée des données"
+    },
+    "instantDiagnostics": {
+      "title": "Diagnostics Instantanés",
+      "description": "Capacités de diagnostic ultra-rapides alimentées par notre technologie de puce IA propriétaire.",
+      "benefit1": "Analyse sub-seconde",
+      "benefit2": "Capacités de calcul en périphérie",
+      "benefit3": "Support d'opération hors ligne"
+    },
+    "anomalyDetection": {
+      "title": "Détection d'Anomalies",
+      "description": "Reconnaissance de motifs avancée pour identifier les modèles de comportement inhabituels dans les systèmes d'aéronefs.",
+      "benefit1": "Réduction des faux positifs",
+      "benefit2": "Analyse comportementale",
+      "benefit3": "Détection prédictive de défauts"
+    },
+    "cloudNative": {
+      "title": "Architecture Cloud-Native",
+      "description": "Infrastructure cloud évolutive garantissant haute disponibilité et performance.",
+      "benefit1": "Garantie de disponibilité 99.9%",
+      "benefit2": "Déploiement global",
+      "benefit3": "Mise à l'échelle automatique"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à révolutionner votre maintenance d'aéronefs ? Contactez notre équipe d'experts pour apprendre comment DRONA peut améliorer vos opérations.",
+    "form": {
+      "title": "Envoyez-nous un Message",
+      "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Jean",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Dupont",
+      "email": "Adresse Email",
+      "emailPlaceholder": "jean@entreprise.com",
+      "company": "Entreprise",
+      "companyPlaceholder": "Nom de Votre Entreprise",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de vos besoins en maintenance d'aéronefs...",
+      "sendMessage": "Envoyer le Message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "street": "123 Rue de l'Aviation",
+      "city": "District Tech, CA 94105",
+      "hours": "Heures d'Ouverture",
+      "businessHours": "Lundi - Vendredi: 9:00 - 18:00",
+      "emergencySupport": "Support d'Urgence 24/7 Disponible"
+    }
   },
   "aircraft": {
     "overallHealth": "Santé Globale",

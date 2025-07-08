@@ -24,7 +24,122 @@
     "systemHealth": "System Health Metrics",
     "liveTelemetry": "Live Telemetry Feed",
     "threatDetection": "Threat Detection",
-    "missionReadiness": "Mission Readiness"
+    "missionReadiness": "Mission Readiness",
+    "heroTitle": "Predictive Maintenance for Aircraft",
+    "heroSubtitle": "Drona uses advanced AI algorithms to predict potential faults in aircraft, ensuring safety and reducing downtime.",
+    "exploreDashboard": "Explore Dashboard",
+    "keyFeatures": "Key Features",
+    "keyFeaturesDescription": "Drona offers a comprehensive suite of features designed to enhance aircraft maintenance and operational efficiency.",
+    "features": {
+      "enhancedSafety": {
+        "title": "Enhanced Safety",
+        "description": "Predictive maintenance minimizes the risk of in-flight failures, ensuring the highest safety standards."
+      },
+      "reducedDowntime": {
+        "title": "Reduced Downtime",
+        "description": "AI-driven insights allow for proactive maintenance, significantly reducing aircraft downtime."
+      },
+      "costSavings": {
+        "title": "Cost Savings",
+        "description": "By preventing unexpected repairs and optimizing maintenance schedules, Drona helps lower operational costs."
+      }
+    }
+  },
+  "features": {
+    "title": "Advanced Features for Aircraft Maintenance",
+    "subtitle": "Discover the comprehensive suite of AI-powered features that make DRONA the leading solution for predictive aircraft maintenance.",
+    "technologyStack": "Built on Cutting-Edge Technology",
+    "tech": {
+      "machineLearning": "Machine Learning",
+      "security": "Security",
+      "cloudComputing": "Cloud Computing",
+      "aiHardware": "AI Hardware"
+    },
+    "aiPredictive": {
+      "title": "AI-Powered Predictive Analytics",
+      "description": "Advanced machine learning algorithms analyze aircraft data to predict maintenance needs before failures occur.",
+      "benefit1": "Reduces unplanned downtime by 60%",
+      "benefit2": "Improves safety margins",
+      "benefit3": "Optimizes maintenance schedules"
+    },
+    "threatDetection": {
+      "title": "Real-Time Threat Detection",
+      "description": "Continuous monitoring of aircraft systems to identify potential security threats and anomalies.",
+      "benefit1": "24/7 system monitoring",
+      "benefit2": "Instant alert notifications",
+      "benefit3": "Automated threat response"
+    },
+    "healthMonitoring": {
+      "title": "Health Monitoring Dashboard",
+      "description": "Comprehensive real-time visualization of aircraft health metrics and system performance.",
+      "benefit1": "Live telemetry data",
+      "benefit2": "Interactive visualizations",
+      "benefit3": "Customizable alerts"
+    },
+    "networkMapping": {
+      "title": "Network Mapping & Tracking",
+      "description": "Advanced radar-style network visualization for tracking aircraft positions and status.",
+      "benefit1": "Real-time position tracking",
+      "benefit2": "Network topology mapping",
+      "benefit3": "Communication link monitoring"
+    },
+    "dataIntegration": {
+      "title": "Data Integration Hub",
+      "description": "Seamless integration with existing aircraft systems and databases for comprehensive data analysis.",
+      "benefit1": "Multi-format data support",
+      "benefit2": "Legacy system compatibility",
+      "benefit3": "Automated data synchronization"
+    },
+    "instantDiagnostics": {
+      "title": "Instant Diagnostics",
+      "description": "Lightning-fast diagnostic capabilities powered by our proprietary AI chip technology.",
+      "benefit1": "Sub-second analysis",
+      "benefit2": "Edge computing capabilities",
+      "benefit3": "Offline operation support"
+    },
+    "anomalyDetection": {
+      "title": "Anomaly Detection",
+      "description": "Advanced pattern recognition to identify unusual behavior patterns in aircraft systems.",
+      "benefit1": "False positive reduction",
+      "benefit2": "Behavioral analysis",
+      "benefit3": "Predictive fault detection"
+    },
+    "cloudNative": {
+      "title": "Cloud-Native Architecture",
+      "description": "Scalable cloud infrastructure ensuring high availability and performance.",
+      "benefit1": "99.9% uptime guarantee",
+      "benefit2": "Global deployment",
+      "benefit3": "Automatic scaling"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to revolutionize your aircraft maintenance? Contact our team of experts to learn how DRONA can enhance your operations.",
+    "form": {
+      "title": "Send us a Message",
+      "description": "Fill out the form below and we'll get back to you within 24 hours.",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "john@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Your Company Name",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your aircraft maintenance needs...",
+      "sendMessage": "Send Message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "street": "123 Aviation Street",
+      "city": "Tech District, CA 94105",
+      "hours": "Business Hours",
+      "businessHours": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "emergencySupport": "24/7 Emergency Support Available"
+    }
   },
   "aircraft": {
     "overallHealth": "Overall Health",

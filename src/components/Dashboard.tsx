@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -95,13 +94,13 @@ export function Dashboard() {
             </div>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 gradient-text">
-            Predictive Maintenance for Aircraft
+            {t('dashboard.heroTitle')}
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Drona uses advanced AI algorithms to predict potential faults in aircraft, ensuring safety and reducing downtime.
+            {t('dashboard.heroSubtitle')}
           </p>
           <Button className="btn-modern text-lg px-8 py-4">
-            Explore Dashboard
+            {t('dashboard.exploreDashboard')}
           </Button>
         </div>
       </div>
@@ -109,9 +108,9 @@ export function Dashboard() {
       {/* Key Features Section */}
       <div className="space-y-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Key Features</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('dashboard.keyFeatures')}</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Drona offers a comprehensive suite of features designed to enhance aircraft maintenance and operational efficiency.
+            {t('dashboard.keyFeaturesDescription')}
           </p>
         </div>
 
@@ -121,11 +120,11 @@ export function Dashboard() {
               <div className="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-blue-400" />
               </div>
-              <CardTitle className="text-white text-xl">Enhanced Safety</CardTitle>
+              <CardTitle className="text-white text-xl">{t('dashboard.features.enhancedSafety.title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-400">
-                Predictive maintenance minimizes the risk of in-flight failures, ensuring the highest safety standards.
+                {t('dashboard.features.enhancedSafety.description')}
               </p>
             </CardContent>
           </Card>
@@ -135,11 +134,11 @@ export function Dashboard() {
               <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4">
                 <Clock className="h-6 w-6 text-green-400" />
               </div>
-              <CardTitle className="text-white text-xl">Reduced Downtime</CardTitle>
+              <CardTitle className="text-white text-xl">{t('dashboard.features.reducedDowntime.title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-400">
-                AI-driven insights allow for proactive maintenance, significantly reducing aircraft downtime.
+                {t('dashboard.features.reducedDowntime.description')}
               </p>
             </CardContent>
           </Card>
@@ -149,11 +148,11 @@ export function Dashboard() {
               <div className="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center mb-4">
                 <DollarSign className="h-6 w-6 text-yellow-400" />
               </div>
-              <CardTitle className="text-white text-xl">Cost Savings</CardTitle>
+              <CardTitle className="text-white text-xl">{t('dashboard.features.costSavings.title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-400">
-                By preventing unexpected repairs and optimizing maintenance schedules, Drona helps lower operational costs.
+                {t('dashboard.features.costSavings.description')}
               </p>
             </CardContent>
           </Card>

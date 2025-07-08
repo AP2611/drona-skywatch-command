@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/Header";
+import { useTranslation } from 'react-i18next';
 import { 
   Shield, 
   Brain, 
@@ -18,56 +19,89 @@ import {
 } from "lucide-react";
 
 const Features = () => {
+  const { t } = useTranslation();
   console.log("Features page rendering");
   
   const features = [
     {
       icon: Brain,
-      title: "AI-Powered Predictive Analytics",
-      description: "Advanced machine learning algorithms analyze aircraft data to predict maintenance needs before failures occur.",
-      benefits: ["Reduces unplanned downtime by 60%", "Improves safety margins", "Optimizes maintenance schedules"]
+      title: t('features.aiPredictive.title'),
+      description: t('features.aiPredictive.description'),
+      benefits: [
+        t('features.aiPredictive.benefit1'),
+        t('features.aiPredictive.benefit2'),
+        t('features.aiPredictive.benefit3')
+      ]
     },
     {
       icon: Shield,
-      title: "Real-Time Threat Detection",
-      description: "Continuous monitoring of aircraft systems to identify potential security threats and anomalies.",
-      benefits: ["24/7 system monitoring", "Instant alert notifications", "Automated threat response"]
+      title: t('features.threatDetection.title'),
+      description: t('features.threatDetection.description'),
+      benefits: [
+        t('features.threatDetection.benefit1'),
+        t('features.threatDetection.benefit2'),
+        t('features.threatDetection.benefit3')
+      ]
     },
     {
       icon: Activity,
-      title: "Health Monitoring Dashboard",
-      description: "Comprehensive real-time visualization of aircraft health metrics and system performance.",
-      benefits: ["Live telemetry data", "Interactive visualizations", "Customizable alerts"]
+      title: t('features.healthMonitoring.title'),
+      description: t('features.healthMonitoring.description'),
+      benefits: [
+        t('features.healthMonitoring.benefit1'),
+        t('features.healthMonitoring.benefit2'),
+        t('features.healthMonitoring.benefit3')
+      ]
     },
     {
       icon: Radar,
-      title: "Network Mapping & Tracking",
-      description: "Advanced radar-style network visualization for tracking aircraft positions and status.",
-      benefits: ["Real-time position tracking", "Network topology mapping", "Communication link monitoring"]
+      title: t('features.networkMapping.title'),
+      description: t('features.networkMapping.description'),
+      benefits: [
+        t('features.networkMapping.benefit1'),
+        t('features.networkMapping.benefit2'),
+        t('features.networkMapping.benefit3')
+      ]
     },
     {
       icon: Database,
-      title: "Data Integration Hub",
-      description: "Seamless integration with existing aircraft systems and databases for comprehensive data analysis.",
-      benefits: ["Multi-format data support", "Legacy system compatibility", "Automated data synchronization"]
+      title: t('features.dataIntegration.title'),
+      description: t('features.dataIntegration.description'),
+      benefits: [
+        t('features.dataIntegration.benefit1'),
+        t('features.dataIntegration.benefit2'),
+        t('features.dataIntegration.benefit3')
+      ]
     },
     {
       icon: Zap,
-      title: "Instant Diagnostics",
-      description: "Lightning-fast diagnostic capabilities powered by our proprietary AI chip technology.",
-      benefits: ["Sub-second analysis", "Edge computing capabilities", "Offline operation support"]
+      title: t('features.instantDiagnostics.title'),
+      description: t('features.instantDiagnostics.description'),
+      benefits: [
+        t('features.instantDiagnostics.benefit1'),
+        t('features.instantDiagnostics.benefit2'),
+        t('features.instantDiagnostics.benefit3')
+      ]
     },
     {
       icon: Eye,
-      title: "Anomaly Detection",
-      description: "Advanced pattern recognition to identify unusual behavior patterns in aircraft systems.",
-      benefits: ["False positive reduction", "Behavioral analysis", "Predictive fault detection"]
+      title: t('features.anomalyDetection.title'),
+      description: t('features.anomalyDetection.description'),
+      benefits: [
+        t('features.anomalyDetection.benefit1'),
+        t('features.anomalyDetection.benefit2'),
+        t('features.anomalyDetection.benefit3')
+      ]
     },
     {
       icon: Cloud,
-      title: "Cloud-Native Architecture",
-      description: "Scalable cloud infrastructure ensuring high availability and performance.",
-      benefits: ["99.9% uptime guarantee", "Global deployment", "Automatic scaling"]
+      title: t('features.cloudNative.title'),
+      description: t('features.cloudNative.description'),
+      benefits: [
+        t('features.cloudNative.benefit1'),
+        t('features.cloudNative.benefit2'),
+        t('features.cloudNative.benefit3')
+      ]
     }
   ];
 
@@ -78,10 +112,10 @@ const Features = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-white mb-6 gradient-text">
-            Advanced Features for Aircraft Maintenance
+            {t('features.title')}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover the comprehensive suite of AI-powered features that make DRONA the leading solution for predictive aircraft maintenance.
+            {t('features.subtitle')}
           </p>
         </div>
 
@@ -114,23 +148,23 @@ const Features = () => {
 
         {/* Technology Stack */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-8">Built on Cutting-Edge Technology</h2>
+          <h2 className="text-3xl font-bold text-white mb-8">{t('features.technologyStack')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="modern-card border-gray-700 p-6 text-center">
               <Brain className="h-10 w-10 text-blue-400 mx-auto mb-3" />
-              <h3 className="text-white font-semibold">Machine Learning</h3>
+              <h3 className="text-white font-semibold">{t('features.tech.machineLearning')}</h3>
             </div>
             <div className="modern-card border-gray-700 p-6 text-center">
               <Shield className="h-10 w-10 text-green-400 mx-auto mb-3" />
-              <h3 className="text-white font-semibold">Security</h3>
+              <h3 className="text-white font-semibold">{t('features.tech.security')}</h3>
             </div>
             <div className="modern-card border-gray-700 p-6 text-center">
               <Cloud className="h-10 w-10 text-purple-400 mx-auto mb-3" />
-              <h3 className="text-white font-semibold">Cloud Computing</h3>
+              <h3 className="text-white font-semibold">{t('features.tech.cloudComputing')}</h3>
             </div>
             <div className="modern-card border-gray-700 p-6 text-center">
               <Cpu className="h-10 w-10 text-orange-400 mx-auto mb-3" />
-              <h3 className="text-white font-semibold">AI Hardware</h3>
+              <h3 className="text-white font-semibold">{t('features.tech.aiHardware')}</h3>
             </div>
           </div>
         </div>
