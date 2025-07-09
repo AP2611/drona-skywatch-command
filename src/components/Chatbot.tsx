@@ -30,6 +30,7 @@ export function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [isMaximized, setIsMaximized] = useState(false);
+  const [isClosed, setIsClosed] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -74,7 +75,6 @@ export function Chatbot() {
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
-      // Focus back to input after sending
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   };
@@ -94,6 +94,30 @@ export function Chatbot() {
       timestamp: new Date()
     }]);
   };
+
+  const handleClose = () => {
+    setIsClosed(true);
+    setIsMinimized(false);
+    setIsMaximized(false);
+  };
+
+  const handleOpen = () => {
+    setIsClosed(false);
+    setIsMinimized(false);
+  };
+
+  if (isClosed) {
+    return (
+      <div className="fixed bottom-4 right-4 z-50">
+        <Button
+          onClick={handleOpen}
+          className="h-14 w-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg pulse-glow"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      </div>
+    );
+  }
 
   if (isMinimized) {
     return (
@@ -159,6 +183,15 @@ export function Chatbot() {
                 title="Minimize to tray"
               >
                 <Minimize2 className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleClose}
+                className="text-slate-400 hover:text-white h-8 w-8 p-0"
+                title="Close"
+              >
+                <X className="h-4 w-4" />
               </Button>
             </div>
           </div>

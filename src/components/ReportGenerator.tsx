@@ -23,7 +23,7 @@ interface ReportGeneratorProps {
 }
 
 export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const generateReport = () => {
     const doc = new jsPDF();
@@ -43,12 +43,12 @@ export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
     
     const statusData = [
       [t('reports.parameter'), t('reports.value'), t('reports.status')],
-      [t('aircraft.overallHealth'), `${aircraft.health}%`, aircraft.status.toUpperCase()],
-      [t('aircraft.altitude'), `${aircraft.altitude} ft`, t('reports.normal')],
-      [t('aircraft.speed'), `${aircraft.speed} knots`, t('reports.normal')],
-      [t('aircraft.battery'), `${aircraft.battery}%`, aircraft.battery > 30 ? t('reports.normal') : t('reports.low')],
-      [t('aircraft.temperature'), `${aircraft.temperature}°F`, aircraft.temperature < 100 ? t('reports.normal') : t('reports.high')],
-      [t('aircraft.lastUpdate'), aircraft.lastUpdate, t('reports.current')]
+      [t('aircraft.overallHealth'), `${aircraft.health}%`, t(`reports.status.${aircraft.status}`)],
+      [t('aircraft.altitude'), `${aircraft.altitude} ft`, t('reports.status.normal')],
+      [t('aircraft.speed'), `${aircraft.speed} knots`, t('reports.status.normal')],
+      [t('aircraft.battery'), `${aircraft.battery}%`, aircraft.battery > 30 ? t('reports.status.normal') : t('reports.status.low')],
+      [t('aircraft.temperature'), `${aircraft.temperature}°F`, aircraft.temperature < 100 ? t('reports.status.normal') : t('reports.status.high')],
+      [t('aircraft.lastUpdate'), aircraft.lastUpdate, t('reports.status.current')]
     ];
 
     let finalY = 80;
@@ -70,10 +70,10 @@ export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
     
     const componentData = [
       [t('reports.component'), t('reports.healthPercent'), t('reports.status'), t('reports.nextMaintenance')],
-      [t('reports.engine'), '94', t('reports.good'), t('reports.flightHours', { hours: 150 })],
-      [t('reports.avionics'), '87', t('reports.good'), t('reports.flightHours', { hours: 75 })],
-      [t('reports.navigation'), '76', t('reports.caution'), t('reports.flightHours', { hours: 25 })],
-      [t('reports.communication'), '91', t('reports.good'), t('reports.flightHours', { hours: 100 })]
+      [t('reports.components.engine'), '94', t('reports.status.good'), t('reports.flightHours', { hours: 150 })],
+      [t('reports.components.avionics'), '87', t('reports.status.good'), t('reports.flightHours', { hours: 75 })],
+      [t('reports.components.navigation'), '76', t('reports.status.caution'), t('reports.flightHours', { hours: 25 })],
+      [t('reports.components.communication'), '91', t('reports.status.good'), t('reports.flightHours', { hours: 100 })]
     ];
 
     autoTable(doc, {
@@ -90,8 +90,9 @@ export function ReportGenerator({ aircraft }: ReportGeneratorProps) {
     doc.text(t('reports.footer'), 20, doc.internal.pageSize.height - 20);
     doc.text(t('reports.classification'), 20, doc.internal.pageSize.height - 10);
 
-    // Save the PDF
-    doc.save(`${t('app.title')}_${t('reports.report')}_${aircraft.id}_${currentDate}.pdf`);
+    // Save the PDF with proper language in filename
+    const languageCode = i18n.language.toUpperCase();
+    doc.save(`${t('app.title')}_${t('reports.report')}_${aircraft.id}_${languageCode}_${currentDate}.pdf`);
   };
 
   return (

@@ -1,4 +1,3 @@
-
 {
   "app": {
     "title": "DRONA",
@@ -195,6 +194,59 @@
     "report": "Report",
     "diagnosticReport": "Diagnostic Report",
     "generateDescription": "Generate a comprehensive diagnostic report for {{callsign}}",
-    "generatePdf": "Generate PDF Report"
+    "generatePdf": "Generate PDF Report",
+    "status": {
+      "normal": "NORMAL",
+      "low": "LOW",
+      "high": "HIGH",
+      "current": "CURRENT",
+      "good": "GOOD",
+      "caution": "CAUTION",
+      "operational": "OPERATIONAL",
+      "critical": "CRITICAL"
+    },
+    "components": {
+      "engine": "Engine",
+      "avionics": "Avionics",
+      "navigation": "Navigation",
+      "communication": "Communication"
+    }
+  },
+  "simulation": {
+    "liveFlightSimulation": "Live Flight Simulation",
+    "start": "Start",
+    "pause": "Pause",
+    "reset": "Reset",
+    "running": "Running",
+    "stopped": "Stopped"
+  },
+  "insights": {
+    "title": "AI Insights",
+    "aiActive": "AI Active",
+    "processingPower": "Processing Power",
+    "confidence": "Confidence",
+    "summary": {
+      "title": "AI Analysis Summary",
+      "description": "Advanced machine learning algorithms continuously analyze aircraft data to provide predictive insights and recommendations.",
+      "insights": "Insights",
+      "avgConfidence": "Avg Confidence",
+      "highPriority": "High Priority"
+    },
+    "predictions": {
+      "engineMaintenance": "Engine Maintenance Required",
+      "engineMaintenanceDesc": "Predictive analysis indicates engine components will require maintenance within 72 hours based on current performance metrics."
+    },
+    "anomalies": {
+      "temperatureSpike": "Temperature Anomaly Detected",
+      "temperatureSpikeDesc": "Unusual temperature patterns detected in avionics bay. Recommend immediate inspection."
+    },
+    "optimizations": {
+      "fuelEfficiency": "Fuel Efficiency Optimization",
+      "fuelEfficiencyDesc": "Route optimization could improve fuel efficiency by 12% while maintaining current schedule."
+    },
+    "alerts": {
+      "systemCheck": "Scheduled System Check",
+      "systemCheckDesc": "Automated system health check completed successfully. All systems operating within normal parameters."
+    }
   }
 }

@@ -27,6 +27,8 @@ import { NetworkMap } from "@/components/NetworkMap";
 import { RealTimeTelemetry } from "@/components/RealTimeTelemetry";
 import { EngineHealthMonitor } from "@/components/EngineHealthMonitor";
 import { Chatbot } from "@/components/Chatbot";
+import { LiveFlightSimulation } from "@/components/LiveFlightSimulation";
+import { AIInsights } from "@/components/AIInsights";
 
 // Simulated aircraft data
 const aircraftData = [
@@ -208,6 +210,12 @@ export function Dashboard() {
             <div className="text-3xl font-bold text-red-400">{criticalCount}</div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Live Simulation and AI Insights */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <LiveFlightSimulation />
+        <AIInsights />
       </div>
 
       {/* Real-Time Telemetry and Network Map */}
