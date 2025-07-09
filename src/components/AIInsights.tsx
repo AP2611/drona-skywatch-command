@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Brain, TrendingUp, AlertTriangle, CheckCircle, Zap, Target } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
@@ -60,6 +61,24 @@ export function AIInsights() {
           confidence: 99,
           priority: 'critical',
           timestamp: new Date()
+        },
+        {
+          id: '5',
+          type: 'prediction',
+          title: 'Battery Degradation Analysis',
+          description: 'Predictive analysis shows battery pack may need replacement in 6 months based on current usage patterns.',
+          confidence: 82,
+          priority: 'medium',
+          timestamp: new Date()
+        },
+        {
+          id: '6',
+          type: 'optimization',
+          title: 'Route Optimization Suggestion',
+          description: 'Alternative flight path could reduce fuel consumption by 12% on current mission profile.',
+          confidence: 89,
+          priority: 'low',
+          timestamp: new Date()
         }
       ];
       
@@ -110,8 +129,8 @@ export function AIInsights() {
   };
 
   return (
-    <Card className="bg-slate-800/50 border-slate-700">
-      <CardHeader>
+    <Card className="bg-slate-800/50 border-slate-700 h-full flex flex-col">
+      <CardHeader className="flex-shrink-0">
         <CardTitle className="text-white flex items-center gap-2">
           <Brain className="h-5 w-5 text-purple-400 animate-pulse" />
           {t('insights.title')}
@@ -128,10 +147,10 @@ export function AIInsights() {
           </div>
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
+      <CardContent className="flex-1 flex flex-col min-h-0">
+        <div className="space-y-4 flex-1 flex flex-col">
           {/* AI Summary */}
-          <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
+          <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600 flex-shrink-0">
             <h3 className="text-white font-medium mb-2">{t('insights.summary.title')}</h3>
             <p className="text-slate-300 text-sm">{t('insights.summary.description')}</p>
             <div className="flex items-center gap-4 mt-3">
@@ -154,49 +173,53 @@ export function AIInsights() {
             </div>
           </div>
 
-          {/* Insights List */}
-          <div className="space-y-3 max-h-64 overflow-y-auto">
-            {insights.map((insight) => (
-              <div
-                key={insight.id}
-                className="bg-slate-700/50 rounded-lg p-3 border border-slate-600 hover:border-slate-500 transition-colors"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-start gap-3 flex-1">
-                    <div className={`p-2 rounded-lg ${getPriorityColor(insight.priority)}`}>
-                      <div className={getTypeColor(insight.type)}>
-                        {getInsightIcon(insight.type)}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-white text-sm font-medium">{insight.title}</h4>
-                        <Badge 
-                          variant="outline" 
-                          className={`text-xs ${getPriorityColor(insight.priority)}`}
-                        >
-                          {insight.priority.toUpperCase()}
-                        </Badge>
-                      </div>
-                      <p className="text-slate-300 text-xs mb-2">{insight.description}</p>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs text-slate-400">{t('insights.confidence')}</span>
-                          <Progress value={insight.confidence} className="w-16 h-1" />
-                          <span className="text-xs text-white">{insight.confidence}%</span>
+          {/* Insights List - Now Scrollable */}
+          <div className="flex-1 min-h-0">
+            <ScrollArea className="h-full">
+              <div className="space-y-3 pr-4">
+                {insights.map((insight) => (
+                  <div
+                    key={insight.id}
+                    className="bg-slate-700/50 rounded-lg p-3 border border-slate-600 hover:border-slate-500 transition-colors"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-start gap-3 flex-1">
+                        <div className={`p-2 rounded-lg ${getPriorityColor(insight.priority)}`}>
+                          <div className={getTypeColor(insight.type)}>
+                            {getInsightIcon(insight.type)}
+                          </div>
                         </div>
-                        <span className="text-xs text-slate-400">
-                          {insight.timestamp.toLocaleTimeString([], { 
-                            hour: '2-digit', 
-                            minute: '2-digit' 
-                          })}
-                        </span>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="text-white text-sm font-medium">{insight.title}</h4>
+                            <Badge 
+                              variant="outline" 
+                              className={`text-xs ${getPriorityColor(insight.priority)}`}
+                            >
+                              {insight.priority.toUpperCase()}
+                            </Badge>
+                          </div>
+                          <p className="text-slate-300 text-xs mb-2">{insight.description}</p>
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs text-slate-400">{t('insights.confidence')}</span>
+                              <Progress value={insight.confidence} className="w-16 h-1" />
+                              <span className="text-xs text-white">{insight.confidence}%</span>
+                            </div>
+                            <span className="text-xs text-slate-400">
+                              {insight.timestamp.toLocaleTimeString([], { 
+                                hour: '2-digit', 
+                                minute: '2-digit' 
+                              })}
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </ScrollArea>
           </div>
         </div>
       </CardContent>
