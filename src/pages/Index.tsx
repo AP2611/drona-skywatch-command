@@ -7,15 +7,20 @@ import { Header } from "@/components/Header";
 import { LandingAnimation } from "@/components/LandingAnimation";
 
 const Index = () => {
+  console.log("Index component rendering, showLanding:", true);
   const [showLanding, setShowLanding] = useState(true);
 
   const handleAnimationComplete = () => {
+    console.log("Index: Animation completed, hiding landing");
     setShowLanding(false);
   };
 
   if (showLanding) {
+    console.log("Index: Rendering LandingAnimation");
     return <LandingAnimation onComplete={handleAnimationComplete} />;
   }
+
+  console.log("Index: Rendering Dashboard");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">

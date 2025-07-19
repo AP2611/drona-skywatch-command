@@ -12,11 +12,24 @@ export function LandingAnimation({ onComplete }: LandingAnimationProps) {
   const [showSubtext, setShowSubtext] = useState(false);
 
   useEffect(() => {
+    console.log("LandingAnimation: Starting animation sequence");
     // Sequence the animations
-    const timer1 = setTimeout(() => setShowLogo(true), 500);
-    const timer2 = setTimeout(() => setShowText(true), 1500);
-    const timer3 = setTimeout(() => setShowSubtext(true), 2500);
-    const timer4 = setTimeout(() => onComplete(), 4500);
+    const timer1 = setTimeout(() => {
+      console.log("LandingAnimation: Showing logo");
+      setShowLogo(true);
+    }, 500);
+    const timer2 = setTimeout(() => {
+      console.log("LandingAnimation: Showing text");
+      setShowText(true);
+    }, 1500);
+    const timer3 = setTimeout(() => {
+      console.log("LandingAnimation: Showing subtext");
+      setShowSubtext(true);
+    }, 2500);
+    const timer4 = setTimeout(() => {
+      console.log("LandingAnimation: Animation complete, calling onComplete");
+      onComplete();
+    }, 4500);
 
     return () => {
       clearTimeout(timer1);
