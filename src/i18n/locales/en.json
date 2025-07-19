@@ -29,6 +29,14 @@
     "exploreDashboard": "Explore Dashboard",
     "keyFeatures": "Key Features",
     "keyFeaturesDescription": "Drona offers a comprehensive suite of features designed to enhance aircraft maintenance and operational efficiency.",
+    "tabs": {
+      "overview": "Overview",
+      "simulation": "Simulation", 
+      "monitoring": "Monitoring",
+      "analysis": "Analysis",
+      "security": "Security",
+      "reports": "Reports"
+    },
     "features": {
       "enhancedSafety": {
         "title": "Enhanced Safety",

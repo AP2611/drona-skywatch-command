@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslation } from 'react-i18next';
 import { 
   Plane, 
@@ -212,51 +213,93 @@ export function Dashboard() {
         </Card>
       </div>
 
-      {/* Live Simulation and AI Insights */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <LiveFlightSimulation />
-        <AIInsights />
-      </div>
+      {/* Feature Tabs */}
+      <Tabs defaultValue="overview" className="w-full">
+        <TabsList className="grid w-full grid-cols-6 lg:grid-cols-6 gap-1 h-auto p-1">
+          <TabsTrigger value="overview" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.overview')}
+          </TabsTrigger>
+          <TabsTrigger value="simulation" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.simulation')}
+          </TabsTrigger>
+          <TabsTrigger value="monitoring" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.monitoring')}
+          </TabsTrigger>
+          <TabsTrigger value="analysis" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.analysis')}
+          </TabsTrigger>
+          <TabsTrigger value="security" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.security')}
+          </TabsTrigger>
+          <TabsTrigger value="reports" className="text-xs sm:text-sm px-2 py-2">
+            {t('dashboard.tabs.reports')}
+          </TabsTrigger>
+        </TabsList>
 
-      {/* Real-Time Telemetry and Network Map */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <RealTimeTelemetry />
-        <NetworkMap />
-      </div>
-
-      {/* Engine Health Monitor */}
-      <div className="grid grid-cols-1 gap-6">
-        <EngineHealthMonitor />
-      </div>
-
-      {/* Aircraft Status Cards with Report Generation */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {aircraftData.map((aircraft) => (
-          <div key={aircraft.id} className="space-y-4">
-            <AircraftStatusCard aircraft={aircraft} />
-            <ReportGenerator aircraft={aircraft} />
+        <TabsContent value="overview" className="space-y-6 mt-6">
+          {/* Live Simulation and AI Insights */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <LiveFlightSimulation />
+            <AIInsights />
           </div>
-        ))}
-      </div>
+          
+          {/* Aircraft Status Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {aircraftData.map((aircraft) => (
+              <AircraftStatusCard key={aircraft.id} aircraft={aircraft} />
+            ))}
+          </div>
+        </TabsContent>
 
-      {/* Advanced Diagnostics */}
-      <div className="grid grid-cols-1 xl:grid-cols-1 gap-6">
-        <ComponentHeatmap />
-      </div>
+        <TabsContent value="simulation" className="space-y-6 mt-6">
+          {/* Live Flight Simulation */}
+          <LiveFlightSimulation />
+          
+          {/* Real-Time Telemetry and Network Map */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <RealTimeTelemetry />
+            <NetworkMap />
+          </div>
+        </TabsContent>
 
-      {/* Threat Detection and Mission Readiness */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <ThreatDetection />
-        <MissionReadiness />
-      </div>
+        <TabsContent value="monitoring" className="space-y-6 mt-6">
+          {/* Engine Health Monitor */}
+          <EngineHealthMonitor />
+          
+          {/* Health Metrics and Charts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <HealthMetrics />
+            <TelemetryChart />
+          </div>
+        </TabsContent>
 
-      {/* Health Metrics and Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <HealthMetrics />
-        <TelemetryChart />
-      </div>
+        <TabsContent value="analysis" className="space-y-6 mt-6">
+          {/* AI Insights */}
+          <AIInsights />
+          
+          {/* Advanced Diagnostics */}
+          <ComponentHeatmap />
+        </TabsContent>
 
-      {/* Chatbot Component */}
+        <TabsContent value="security" className="space-y-6 mt-6">
+          {/* Threat Detection and Mission Readiness */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <ThreatDetection />
+            <MissionReadiness />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="reports" className="space-y-6 mt-6">
+          {/* Report Generation for each aircraft */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {aircraftData.map((aircraft) => (
+              <ReportGenerator key={aircraft.id} aircraft={aircraft} />
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
+
+      {/* Chatbot Component - Always visible */}
       <Chatbot />
     </div>
   );

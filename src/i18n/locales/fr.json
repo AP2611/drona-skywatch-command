@@ -30,6 +30,14 @@
     "exploreDashboard": "Explorer le Tableau de Bord",
     "keyFeatures": "Caractéristiques Clés",
     "keyFeaturesDescription": "Drona offre une suite complète de fonctionnalités conçues pour améliorer la maintenance et l'efficacité opérationnelle des aéronefs.",
+    "tabs": {
+      "overview": "Aperçu",
+      "simulation": "Simulation",
+      "monitoring": "Surveillance", 
+      "analysis": "Analyse",
+      "security": "Sécurité",
+      "reports": "Rapports"
+    },
     "features": {
       "enhancedSafety": {
         "title": "Sécurité Renforcée",
